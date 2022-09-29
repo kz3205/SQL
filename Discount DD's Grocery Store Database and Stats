@@ -1,0 +1,41 @@
+-- Create a store database
+
+CREATE TABLE Discount_DDs (id INTEGER PRIMARY KEY, item TEXT, section INTEGER, price INTEGER, availability TEXT);
+
+INSERT INTO Discount_DDs VALUES
+(1, "Canned tuna", "Bulk", "$1.50", "87"),
+(2, "Canned red beans", "Bulk", "$1.75", "58"),
+(3, "Chia Seeds", "Bulk", "$5.50", "10"),
+(4, "Green Onion", "Produce", "$0.50", "100"),
+(5, "M&Ms", "Snacks", "$10.50", "100"),
+(6, "Brownies", "Snacks", "$17.92", "20"),
+(7, "Chocolate chip cookies", "Snacks", "$11.20", "40"),
+(8, "Sour Patch Kids", "Snacks", "$33.00", "90"),
+(9, "Mangos", "Produce", "$2.00", "43"),
+(10, "Strawberries", "Produce", "$20.00", "2"),
+(11, "Blueberries", "Produce", "$1.00", "30"),
+(12, "Kale", "Produce", "$0.01", "42"),
+(13, "Paper Towel", "Hygiene", "$15.00", "73"),
+(14, "Soap", "Hygiene", "$10.00", "33"),
+(15, "Pork Chops", "Meats", "$19.42", "0"),
+(16, "Tri-Tip", "Meats", "$23.42", "50"),
+(17, "Bacon", "Meats", "$105.00", "89")
+; 
+
+-- Display the database ordered by price. 
+
+SELECT * FROM Discount_DDs
+ORDER BY price desc;
+
+-- What is the avg price of items in the bulk section? 
+
+SELECT AVG(price) "avg bulk item price"
+FROM Discount_DDs
+where section='bulk'; 
+
+-- What are the most 5 popular items? 
+
+SELECT item, price, availability
+FROM Discount_DDs
+order by availability desc
+limit 7; 
