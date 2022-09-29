@@ -29,13 +29,13 @@ ORDER BY price desc;
 
 -- What is the avg price of items in the bulk section? 
 
-SELECT AVG(price) "avg bulk item price"
+SELECT AVG(price) "Avg Bulk Item Price"
 FROM Discount_DDs
-where section='bulk'; 
+where section='Bulk'; 
 
 -- What are the most 5 popular items? 
 
-SELECT item, price, availability
+SELECT Item, Price, Availability
 FROM Discount_DDs
 order by availability desc
 limit 7; 
